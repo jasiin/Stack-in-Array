@@ -1,2 +1,2 @@
 # Stack-in-Array
-is about stack in array
+it's about stack in array
