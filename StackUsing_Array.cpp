@@ -1,8 +1,9 @@
 #include <iostream>
 using namespace std;
 
-int maksimal = 5;
-string arrayBuku[5];
+#define maksimal 5
+
+string arrayBuku[maksimal];
 int top = 0;
 
 bool isFull()
@@ -64,28 +65,7 @@ void peekArray(int posisi){
     for( int i = 0; i < posisi; i++ ){
       index--;
     }
-    cout << "Data posisi ke-" << posisi << " : " << arrayBuku[index] << endl;
-  }
-}
-
-void changeArray(string data, int posisi){
-  if( isEmpty() ){
-    cout << "Data kosong!!" << endl;
-  }else{
-    int index = top;
-    for( int i = 0; i < posisi; i++ ){
-      index--;
-    }
-    arrayBuku[index] = data;
-  }
-}
-
-int countArray()
-{
-  if( isEmpty() ){
-    return 0;
-  }else{
-    return top;
+    cout << "\nData posisi ke-" << posisi << " : " << arrayBuku[index] << endl;
   }
 }
 
@@ -100,14 +80,12 @@ void destroyArray(){
 int main(){
 
   pushArray("1");
-  displayArray();
   pushArray("2");
   pushArray("3");
   pushArray("4");
-  pushArray("5");
   displayArray();
 
-  pushArray("0");
+  pushArray("5");
   displayArray();
 
   popArray();
@@ -116,12 +94,5 @@ int main(){
   cout << "Apakah data full ? : " << isFull() << endl;
   cout << "Apakah data kosong ? : " << isEmpty() << endl;
 
-  peekArray(3);
-
-  cout << "\nBanyak data : " << countArray() << endl;
-
-  changeArray("12", 3);
-  displayArray();
-  
+  peekArray(4);
 }
-
